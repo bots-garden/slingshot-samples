@@ -29,6 +29,7 @@ tasks:
       cp slingshot-v0.0.3-linux-amd64 slingshot
       rm slingshot-v0.0.3-linux-amd64
       sudo cp ./slingshot /usr/bin
+      rm slingshot
 
 
 ports:
