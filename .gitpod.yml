@@ -1,0 +1,42 @@
+image: gitpod/workspace-full
+
+tasks:
+  - name: initialize
+    before: |
+      echo "🚀 before..."
+      GOLANG_VERSION="1.20"
+      GOLANG_OS="linux"
+      GOLANG_ARCH="amd64"
+      TINYGO_VERSION="0.29.0"
+      TINYGO_ARCH="amd64"
+      # -----------------------
+      # Install GoLang
+      # -----------------------
+      bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+      gvm install ${GOLANG_VERSION}
+      gvm use ${GOLANG_VERSION} [--default]        
+
+      # -----------------------
+      # Install TinyGo
+      # -----------------------
+      wget https://github.com/tinygo-org/tinygo/releases/download/v${TINYGO_VERSION}/tinygo_${TINYGO_VERSION}_${TINYGO_ARCH}.deb
+      sudo dpkg -i tinygo_${TINYGO_VERSION}_${TINYGO_ARCH}.deb
+      rm tinygo_${TINYGO_VERSION}_${TINYGO_ARCH}.deb
+    init: |
+      echo "🚀 initialize..."
+      go install -v github.com/mgechev/revive@v1.2.3
+      wget https://github.com/bots-garden/slingshot/releases/download/v0.0.3/slingshot-v0.0.3-linux-amd64
+      cp slingshot-v0.0.3-linux-amd64 slingshot
+      rm slingshot-v0.0.3-linux-amd64
+      sudo cp ./slingshot /usr/bin
+
+
+ports:
+  - port: 8080
+    visibility: public
+
+vscode:
+  extensions:
+    - golang.go
+    - pkief.material-icon-theme
+    - aaron-bond.better-comments

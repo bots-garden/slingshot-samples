@@ -1,0 +1,13 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Gitpod Dark",
+  "terminal.integrated.fontSize": 16,
+  "editor.fontSize": 16,
+  "go.useLanguageServer": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "go.lintTool": "revive",
+  "go.languageServerExperimentalFeatures": {
+    "diagnostics": true
+  }
+}
