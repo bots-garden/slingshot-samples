@@ -1,0 +1,14 @@
+{
+    "name": "hello-js",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "build": "node esbuild.js && extism-js dist/index.js -o ./hello-js.wasm"
+    },
+    "author": "@k33g_org",
+    "license": "MIT",
+    "devDependencies": {
+      "esbuild": "^0.19.2"
+    }
+  }
+  
