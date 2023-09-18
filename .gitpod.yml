@@ -25,10 +25,10 @@ tasks:
     init: |
       echo "🚀 initialize..."
       go install -v github.com/mgechev/revive@v1.2.3
-      wget https://github.com/bots-garden/slingshot/releases/download/v0.0.3/slingshot-v0.0.3-linux-amd64
-      cp slingshot-v0.0.3-linux-amd64 slingshot
+      wget https://github.com/bots-garden/slingshot/releases/download/v0.0.3/slingshot-v0.0.4-linux-amd64
+      cp slingshot-v0.0.4-linux-amd64 slingshot
       chmod +x slingshot
-      rm slingshot-v0.0.3-linux-amd64
+      rm slingshot-v0.0.4-linux-amd64
       sudo cp ./slingshot /usr/bin
       rm slingshot
 

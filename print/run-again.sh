@@ -10,7 +10,7 @@ EOF
 echo $string
 
 slingshot run \
-    --wasm=./print.wasm \
+  --wasm=./print.wasm \
 	--handler=callHandler \
 	--input="${string}"
 
